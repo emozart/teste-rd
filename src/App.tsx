@@ -1,5 +1,14 @@
 import React from 'react'
 
-const App: React.FC = () => <h1>Home Page</h1>
+import GlobalStyle from './styles/global'
+
+import Home from './pages/Home'
+
+const App: React.FC = () => (
+  <>
+    <GlobalStyle />
+    <Home />
+  </>
+)
 
 export default App
