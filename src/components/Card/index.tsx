@@ -2,32 +2,33 @@ import React, { HTMLAttributes } from 'react'
 
 import { Container } from './styles'
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+export interface ICardTemplate {
   image: string
   title: string
   cardColor: string
   textContent: string
   textButton: string
+  action(): void
 }
 
-const Card: React.FC<CardProps> = ({
-  image,
-  title,
-  cardColor,
-  textContent,
-  textButton,
-  ...rest
-}) => {
+interface ICard extends HTMLAttributes<HTMLDivElement> {
+  card: ICardTemplate
+}
+
+const Card: React.FC<ICard> = ({ card, ...rest }) => {
   return (
-    <Container cardColor={cardColor}>
+    <Container cardColor={card.cardColor}>
       <div>
-        <img src={image} alt="Logo Raia" />
-        <h3>{title}</h3>
+        <img src={card.image} alt="Logo Raia" />
+        <h3>{card.title}</h3>
       </div>
       <p>
-        Quando precionado o botão <span>{textButton}</span> {textContent}
+        Quando precionado o botão <span>{card.textButton}</span>{' '}
+        {card.textContent}
       </p>
-      <button type="button">Leia mais...</button>
+      <button type="button" onClick={card.action}>
+        Leia mais...
+      </button>
     </Container>
   )
 }

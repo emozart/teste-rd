@@ -16,7 +16,7 @@ export const Container = styled.div<ICard>`
   div {
     display: flex;
     flex-direction: column;
-    background-color: #fe9481;
+    background-color: ${props => props.cardColor};
     width: 100%;
 
     img {
@@ -51,7 +51,7 @@ export const Container = styled.div<ICard>`
     font-weight: 400;
     letter-spacing: -2px;
     font-stretch: ultra-condensed;
-    background-color: #fe9481;
+    background-color: ${props => props.cardColor};
     color: #fff;
     padding: 0 5px;
     border: none;
