@@ -10,11 +10,11 @@ export interface DefaultTheme {
 
 export const themePrincipal: DefaultTheme = {
   color: {
-    primary: '#007f56',
+    primary: '#007F56',
     secondary: '#868686',
-    danger: '#fe9481',
-    warning: '#fcda92',
-    info: '#9c8cb9'
+    danger: '#FE9481',
+    warning: '#FCDA92',
+    info: '#9C8CB9'
   }
 }
 
@@ -22,8 +22,8 @@ export const themeBlackFriday: DefaultTheme = {
   color: {
     primary: '#005500',
     secondary: '#868686',
-    danger: '#bb0000',
-    warning: '#dddd00',
-    info: '#0000dd'
+    danger: '#BB0000',
+    warning: '#DDDD00',
+    info: '#0000DD'
   }
 }

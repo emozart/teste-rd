@@ -2,7 +2,12 @@ import styled from 'styled-components'
 
 import bgImage from '../../assets/bg.jpg'
 
-export const TitleContainer = styled.div`
+interface ITitleSection {
+  titleColor: string
+  subtitleColor: string
+}
+
+export const TitleContainer = styled.div<ITitleSection>`
   width: 100%;
   background: url(${bgImage}) no-repeat center;
   background-size: cover;
@@ -19,13 +24,12 @@ export const TitleContainer = styled.div`
 
     h1 {
       max-width: 1000px;
-      font-size: 58px;
+      font-size: 60px;
       font-weight: 300;
       line-height: 60px;
       text-align: center;
-      color: #007f56;
-      margin-top: 60px;
-      margin-bottom: 60px;
+      color: ${props => props.titleColor};
+      margin: 52px 0;
 
       span {
         font-weight: 800;
@@ -33,28 +37,28 @@ export const TitleContainer = styled.div`
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 32px;
       font-weight: 300;
-      color: #868686;
+      line-height: 36px;
+      text-align: center;
+      color: ${props => props.subtitleColor};
 
       span {
         font-weight: 800;
       }
-    }
 
-    ul {
-      margin: 0 auto;
-      list-style: none;
+      ul {
+        margin: 0 auto;
+        list-style: none;
 
-      li {
-        display: inline;
-        font-size: 28px;
-        font-weight: 300;
-        color: #868686;
-        margin-right: 15px;
+        li {
+          display: inline;
+          margin-right: 10px;
 
-        svg {
-          margin: auto 0;
+          svg {
+            margin: auto 0;
+            vertical-align: 4px;
+          }
         }
       }
     }

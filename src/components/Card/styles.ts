@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface ICard {
   cardColor: string
+  textColor: string
 }
 
 export const Container = styled.div<ICard>`
@@ -38,7 +39,7 @@ export const Container = styled.div<ICard>`
     font-size: 20px;
     font-weight: 300;
     margin: 5px;
-    color: #868686;
+    color: ${props => props.textColor};
 
     span {
       font-weight: 600;
