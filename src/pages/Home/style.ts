@@ -69,14 +69,12 @@ export const CardContainer = styled.section`
   width: 100%;
   background: url(${bgImage}) no-repeat center;
   background-size: cover;
-  padding: 30px 0;
+  padding: 20px 0;
 
   div {
     max-width: 1200px;
     display: flex;
-    align-content: space-around;
-    letter-spacing: -2px;
-    font-stretch: ultra-condensed;
+    justify-content: space-around;
     margin: 0 auto;
   }
 `

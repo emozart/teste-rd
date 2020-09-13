@@ -2,34 +2,39 @@ import styled from 'styled-components'
 
 import bgImage from '../../assets/bg.jpg'
 
-export const Container = styled.div`
+import { IFooter } from './index'
+
+export const Container = styled.div<IFooter>`
   width: 100%;
-  height: 75px;
+  height: 80px;
   background: url(${bgImage}) no-repeat center;
   background-size: cover;
 
   div {
     display: flex;
-    max-width: 1200px;
-    height: 75px;
-    align-items: center;
+    width: 1200px;
+    height: 80px;
     justify-content: space-between;
     margin: 0 auto;
+    padding: 20px;
 
     p {
-      font-weight: 300;
-      font-size: 12px;
-      color: #868686;
-      margin-right: 100px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 40px;
+      text-align: center;
+      color: ${props => props.textColor};
+      margin-right: 30px;
     }
 
     ul {
       list-style: none;
       align-content: flex-end;
+      margin: 0 30px;
 
       li {
         display: inline;
-        padding: 10px;
+        margin: 6px;
       }
     }
 

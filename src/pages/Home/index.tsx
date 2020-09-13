@@ -127,7 +127,7 @@ const Home: React.FC = () => {
           <Card card={card3} />
         </div>
       </CardContainer>
-      <Footer />
+      <Footer textColor={`${theme.color.secondary}`} />
     </ThemeProvider>
   )
 }

@@ -1,6 +1,4 @@
-import React from 'react'
-
-import { Container } from './styles'
+import React, { HTMLAttributes } from 'react'
 
 import logoRaia from '../../assets/drogaraia.png'
 import logoDrogasil from '../../assets/drogasil.png'
@@ -9,8 +7,14 @@ import logoUnivers from '../../assets/univers.png'
 import logo4bio from '../../assets/4bio.png'
 import logoRD from '../../assets/rd-small.png'
 
-const Footer: React.FC = () => (
-  <Container>
+import { Container } from './styles'
+
+export interface IFooter extends HTMLAttributes<HTMLDivElement> {
+  textColor: string
+}
+
+const Footer: React.FC<IFooter> = ({ textColor, ...rest }) => (
+  <Container textColor={textColor}>
     <div>
       <p>RD 2017. Todos os direitos reservados</p>
       <ul>
@@ -30,7 +34,7 @@ const Footer: React.FC = () => (
           <img src={logo4bio} alt="Logo 4bio" />
         </li>
       </ul>
-      <div></div>
+      <div />
       <img src={logoRD} alt="RD Logo Footer" />
     </div>
   </Container>

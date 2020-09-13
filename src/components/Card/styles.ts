@@ -6,13 +6,12 @@ interface ICard {
 }
 
 export const Container = styled.div<ICard>`
-  width: 340px;
+  width: 360px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
   letter-spacing: -2px;
   font-stretch: ultra-condensed;
-  margin: 10px auto;
 
   div {
     display: flex;
@@ -26,10 +25,10 @@ export const Container = styled.div<ICard>`
 
     h3 {
       text-align: center;
-      font-size: 30px;
+      font-size: 32px;
       font-weight: 300;
       color: #fff;
-      margin: 30px 0;
+      margin: 22px 0;
     }
   }
 
@@ -38,7 +37,8 @@ export const Container = styled.div<ICard>`
     text-align: justify;
     font-size: 20px;
     font-weight: 300;
-    margin: 5px;
+    line-height: 20px;
+    padding: 6px;
     color: ${props => props.textColor};
 
     span {
