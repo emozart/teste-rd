@@ -1,28 +1,33 @@
-import React from 'react'
+import React, { HTMLAttributes } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Container } from './styles'
 import rdLogoHeader from '../../assets/rd.png'
 
-const Header: React.FC = () => (
-  <Container>
+export interface IHeader extends HTMLAttributes<HTMLDivElement> {
+  menuColor: string
+  borderColor: string
+}
+
+const Header: React.FC<IHeader> = ({ menuColor, borderColor, ...rest }) => (
+  <Container menuColor={menuColor} borderColor={borderColor}>
     <div>
       <img src={rdLogoHeader} alt="RD Logo Header" />
-      <div></div>
       <ul>
         <li>
-          <button type="button">HTML5</button>
+          <Link to={'#'}>HTML5</Link>
         </li>
         <li>
-          <button type="button">CSS3</button>
+          <Link to={'#'}>CSS3</Link>
         </li>
         <li>
-          <button type="button">JAVASCRIPT</button>
+          <Link to={'#'}>JAVASCRIPT</Link>
         </li>
         <li>
-          <button type="button">REACT</button>
+          <Link to={'#'}>REACT</Link>
         </li>
         <li>
-          <button type="button">REDUX</button>
+          <Link to={'#'}>REDUX</Link>
         </li>
       </ul>
     </div>

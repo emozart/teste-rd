@@ -76,7 +76,10 @@ const Home: React.FC = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header />
+      <Header
+        menuColor={`${theme.color.primary}`}
+        borderColor={`${theme.color.secondary}`}
+      />
       <TitleContainer
         titleColor={`${theme.color.primary}`}
         subtitleColor={`${theme.color.secondary}`}
