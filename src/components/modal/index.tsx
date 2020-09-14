@@ -14,8 +14,8 @@ const Modal: React.FC<IModal> = ({ title, content, action, ...rest }) => {
       <div>
         <h1>{title}</h1>
         <p>{content}</p>
+        <button onClick={action}>Fechar</button>
       </div>
-      <button onClick={action}>Fechar</button>
     </Container>
   )
 }

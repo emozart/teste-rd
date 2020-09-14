@@ -29,7 +29,10 @@ export const Container = styled.div`
     }
 
     button {
-      display: block;
+      width: 100px;
+      height: 35px;
+      margin: 10px;
+      align-self: flex-end;
     }
   }
 `
