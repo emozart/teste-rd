@@ -11,6 +11,7 @@ export const TitleContainer = styled.div<ITitleSection>`
   width: 100%;
   background: url(${bgImage}) no-repeat center;
   background-size: cover;
+  margin-top: 100px;
 
   div {
     max-width: 1200px;
@@ -76,5 +77,37 @@ export const CardContainer = styled.section`
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
+  }
+`
+
+export const GeneralContainer = styled.section`
+  width: 100%;
+  background: url(${bgImage}) no-repeat center;
+  background-size: cover;
+  padding: 70px 0;
+
+  div {
+    max-width: 1200px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+
+    h1 {
+      font-size: 32px;
+      font-weight: 300;
+      line-height: 36px;
+      text-align: left;
+      margin: 10px;
+    }
+
+    p {
+      font-size: 26px;
+      font-weight: 300;
+      line-height: 30px;
+      text-align: left;
+      margin: 10px;
+    }
   }
 `

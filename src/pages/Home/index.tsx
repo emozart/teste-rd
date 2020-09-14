@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useRef } from 'react'
 import { MdBrightness1 } from 'react-icons/md'
 import { ThemeProvider } from 'styled-components'
 
@@ -14,11 +14,14 @@ import mobileDevice from '../../assets/mobile.png'
 
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Modal from '../../components/modal'
 import Card, { ICardTemplate } from '../../components/Card'
-import { TitleContainer, CardContainer } from './style'
+import { TitleContainer, CardContainer, GeneralContainer } from './style'
 
 const Home: React.FC = () => {
   const [theme, setTheme] = useState<DefaultTheme>(themePrincipal)
+  const [openPopupInfo, setOpenPopupInfo] = useState(false)
+  const InfoSection = useRef(null)
 
   const handleChangeTheme = useCallback(() => {
     if (theme === themePrincipal) {
@@ -28,21 +31,18 @@ const Home: React.FC = () => {
     }
   }, [theme])
 
-  const handleAction1 = useCallback(() => {
-    if (theme === themePrincipal) {
-      setTheme(themeBlackFriday)
-    } else {
-      setTheme(themePrincipal)
-    }
-  }, [theme])
+  const scrollToInfo = useCallback(
+    ref => window.scrollTo(0, ref.current.offsetTop),
+    []
+  )
 
-  const handleAction2 = useCallback(() => {
-    if (theme === themePrincipal) {
-      setTheme(themeBlackFriday)
+  const handleOpenPopupInfo = useCallback(() => {
+    if (openPopupInfo) {
+      setOpenPopupInfo(false)
     } else {
-      setTheme(themePrincipal)
+      setOpenPopupInfo(true)
     }
-  }, [theme])
+  }, [openPopupInfo])
 
   const card1: ICardTemplate = {
     image: desktopDevice,
@@ -51,7 +51,9 @@ const Home: React.FC = () => {
     textColor: `${theme.color.secondary}`,
     textContent: 'o restante da informação deverá aparecer em scroll down.',
     textButton: 'Leia mais...',
-    action: handleAction1
+    action: () => {
+      scrollToInfo(InfoSection)
+    }
   }
 
   const card2: ICardTemplate = {
@@ -61,7 +63,7 @@ const Home: React.FC = () => {
     textColor: `${theme.color.secondary}`,
     textContent: 'informação deverá aparecer completa em um popup na tela.',
     textButton: 'Leia mais...',
-    action: handleAction2
+    action: handleOpenPopupInfo
   }
 
   const card3: ICardTemplate = {
@@ -70,7 +72,7 @@ const Home: React.FC = () => {
     cardColor: `${theme.color.info}`,
     textColor: `${theme.color.secondary}`,
     textContent: 'modifique o tema do site para blackfriday a seu gosto',
-    textButton: 'Leia mais...',
+    textButton: 'alterar tema',
     action: handleChangeTheme
   }
 
@@ -128,6 +130,63 @@ const Home: React.FC = () => {
         </div>
       </CardContainer>
       <Footer textColor={`${theme.color.secondary}`} />
+      <GeneralContainer ref={InfoSection}>
+        <div>
+          <h1>Site Responsivo Desktop</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </div>
+      </GeneralContainer>
+      {openPopupInfo && (
+        <Modal
+          title={'Mais Informações'}
+          content={
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ' +
+            'eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ' +
+            'enim ad minim veniam, quis nostrud exercitation ullamco laboris ' +
+            'nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor ' +
+            'in reprehenderit in voluptate velit esse cillum dolore eu ' +
+            'fugiat nulla pariatur. Excepteur sint occaecat cupidatat non ' +
+            'proident, sunt in culpa qui officia deserunt mollit anim id est ' +
+            'laborum.'
+          }
+          action={handleOpenPopupInfo}
+        />
+      )}
     </ThemeProvider>
   )
 }

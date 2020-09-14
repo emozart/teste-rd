@@ -5,6 +5,9 @@ import bgImage from '../../assets/bg.jpg'
 import { IFooter } from './index'
 
 export const Container = styled.div<IFooter>`
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
   height: 80px;
   background: url(${bgImage}) no-repeat center;
