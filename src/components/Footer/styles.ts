@@ -21,6 +21,10 @@ export const Container = styled.div<IFooter>`
     margin: 0 auto;
     padding: 20px;
 
+    @media (max-width: 1135px) {
+      width: 100%;
+    }
+
     p {
       font-weight: 400;
       font-size: 14px;
@@ -28,12 +32,20 @@ export const Container = styled.div<IFooter>`
       text-align: center;
       color: ${props => props.textColor};
       margin-right: 30px;
+
+      @media (max-width: 1135px) {
+        margin-right: 5px;
+      }
     }
 
     ul {
       list-style: none;
       align-content: flex-end;
       margin: 0 30px;
+
+      @media (max-width: 1135px) {
+        display: none;
+      }
 
       li {
         display: inline;
@@ -44,6 +56,10 @@ export const Container = styled.div<IFooter>`
     div {
       flex: 1;
       width: 100%;
+
+      @media (max-width: 1135px) {
+        display: none;
+      }
     }
   }
 `

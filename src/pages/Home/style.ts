@@ -23,6 +23,10 @@ export const TitleContainer = styled.div<ITitleSection>`
     font-stretch: ultra-condensed;
     margin: 0 auto;
 
+    @media (max-width: 767px) {
+      width: 100vw;
+    }
+
     h1 {
       max-width: 1000px;
       font-size: 60px;
@@ -31,6 +35,12 @@ export const TitleContainer = styled.div<ITitleSection>`
       text-align: center;
       color: ${props => props.titleColor};
       margin: 52px 0;
+
+      @media (max-width: 767px) {
+        margin: 5px;
+        font-size: 54px;
+        line-height: 54px;
+      }
 
       span {
         font-weight: 800;
@@ -44,6 +54,13 @@ export const TitleContainer = styled.div<ITitleSection>`
       text-align: center;
       color: ${props => props.subtitleColor};
 
+      @media (max-width: 767px) {
+        margin: 10px 0;
+        br {
+          display: none;
+        }
+      }
+
       span {
         font-weight: 800;
       }
@@ -51,6 +68,10 @@ export const TitleContainer = styled.div<ITitleSection>`
       ul {
         margin: 0 auto;
         list-style: none;
+
+        @media (max-width: 767px) {
+          margin: 0 60px;
+        }
 
         li {
           display: inline;
@@ -77,6 +98,11 @@ export const CardContainer = styled.section`
     display: flex;
     justify-content: space-around;
     margin: 0 auto;
+
+    @media (max-width: 767px) {
+      width: 100vw;
+      flex-direction: column;
+    }
   }
 `
 
@@ -88,7 +114,6 @@ export const GeneralContainer = styled.section`
 
   div {
     max-width: 1200px;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -100,6 +125,10 @@ export const GeneralContainer = styled.section`
       line-height: 36px;
       text-align: left;
       margin: 10px;
+
+      @media (max-width: 767px) {
+        margin: 40px;
+      }
     }
 
     p {

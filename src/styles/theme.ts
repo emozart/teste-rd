@@ -20,10 +20,10 @@ export const themePrincipal: DefaultTheme = {
 
 export const themeBlackFriday: DefaultTheme = {
   color: {
-    primary: '#005500',
-    secondary: '#868686',
-    danger: '#BB0000',
-    warning: '#DDDD00',
-    info: '#0000DD'
+    primary: '#0540F2',
+    secondary: '#3D6AF2',
+    danger: '#F24130',
+    warning: '#F2E205',
+    info: '#02732A'
   }
 }

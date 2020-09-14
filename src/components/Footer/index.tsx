@@ -35,6 +35,7 @@ const Footer: React.FC<IFooter> = ({ textColor, ...rest }) => (
         </li>
       </ul>
       <div />
+      <div />
       <img src={logoRD} alt="RD Logo Footer" />
     </div>
   </Container>

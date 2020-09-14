@@ -129,7 +129,6 @@ const Home: React.FC = () => {
           <Card card={card3} />
         </div>
       </CardContainer>
-      <Footer textColor={`${theme.color.secondary}`} />
       <GeneralContainer ref={InfoSection}>
         <div>
           <h1>Site Responsivo Desktop</h1>
@@ -171,6 +170,7 @@ const Home: React.FC = () => {
           </p>
         </div>
       </GeneralContainer>
+      <Footer textColor={`${theme.color.secondary}`} />
       {openPopupInfo && (
         <Modal
           title={'Mais Informações'}
